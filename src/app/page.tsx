@@ -17,12 +17,16 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="primary" size="lg">
-              컴포넌트 보기
-            </Button>
-            <Button variant="outline" size="lg">
-              기능 테스트
-            </Button>
+            <a href="/ui-showcase">
+              <Button variant="primary" size="lg">
+                UI Showcase
+              </Button>
+            </a>
+            <a href="/features">
+              <Button variant="outline" size="lg">
+                Features
+              </Button>
+            </a>
           </div>
         </div>
 

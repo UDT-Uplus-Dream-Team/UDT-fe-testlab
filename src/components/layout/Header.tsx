@@ -20,10 +20,10 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="/components"
+              href="/ui-showcase"
               className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Components
+              UI Showcase
             </Link>
             <Link
               href="/features"
