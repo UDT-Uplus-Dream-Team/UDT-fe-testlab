@@ -1,12 +1,12 @@
 # UDT TestLab - Next.js 15
 
-Next.js 15, TypeScript, Tailwind CSS로 구축된 최신 테스트 환경입니다.
+Next.js 15, TypeScript, Tailwind CSS v4로 구축된 최신 테스트 환경입니다.
 
 ## 🚀 기술 스택
 
 - **Framework**: Next.js 15.3.5 (App Router)
 - **Language**: TypeScript 5
-- **Styling**: Tailwind CSS 3.4.17 (안정적 버전)
+- **Styling**: Tailwind CSS 4.0.0 (최신 버전)
 - **Linting**: ESLint 9
 - **Code Formatting**: Prettier
 - **Git Hooks**: Husky
@@ -28,7 +28,7 @@ Next.js 15, TypeScript, Tailwind CSS로 구축된 최신 테스트 환경입니�
 src/
 ├── app/                    # Next.js App Router
 │   ├── ui-showcase/        # UI 컴포넌트 쇼케이스 페이지 (/ui-showcase)
-│   ├── globals.css        # 전역 스타일
+│   ├── globals.css        # 전역 스타일 (Tailwind v4 설정)
 │   ├── layout.tsx         # 루트 레이아웃 (Next.js 15 최적화)
 │   └── page.tsx           # 홈페이지 (/)
 ├── components/            # 재사용 가능한 컴포넌트
@@ -39,7 +39,7 @@ src/
 │   │   └── Header.tsx    # 헤더 컴포넌트
 │   └── features/         # 기능별 컴포넌트
 ├── lib/                  # 유틸리티 함수들
-│   └── utils.ts          # 공통 유틸리티 (clsx, tailwind-merge)
+│   └── utils.ts          # 공통 유틸리티 (clsx)
 ├── hooks/                # 커스텀 훅
 ├── types/                # TypeScript 타입 정의
 │   └── index.ts          # 공통 타입
@@ -52,7 +52,7 @@ src/
 - **UI 쇼케이스**: `/ui-showcase`
 - **기능 테스트**: `/features` (준비 중)
 
-## ��️ 개발 환경 설정
+## 🛠️ 개발 환경 설정
 
 ### 설치
 
@@ -124,7 +124,7 @@ React 19의 새로운 타입 기능들을 활용하여 더 안전한 컴포넌�
 
 ## 🎨 스타일링 가이드
 
-### Tailwind CSS 클래스 병합
+### Tailwind CSS v4 클래스 병합
 
 `src/lib/utils.ts`의 `cn` 함수를 사용하여 클래스를 병합합니다:
 
@@ -140,7 +140,7 @@ import { cn } from '@/lib/utils';
 
 ### 반응형 디자인
 
-Next.js 15와 Tailwind CSS 3의 최신 기능을 활용한 반응형 디자인:
+Next.js 15와 Tailwind CSS v4의 최신 기능을 활용한 반응형 디자인:
 
 ```typescript
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -190,23 +190,43 @@ const formattedNumber = formatNumber(1234567); // 1,234,567
 - **Suspense**: 더 나은 로딩 상태 관리
 - **Concurrent Features**: 사용자 경험 개선
 
-## 📚 Tailwind CSS 버전 정보
+## 📚 Tailwind CSS v4 정보
 
 ### 현재 사용 중인 버전
 
-- **Tailwind CSS**: v3.4.17 (안정적 버전)
+- **Tailwind CSS**: v4.0.0 (최신 버전)
 
-### 버전 선택 이유
+### Tailwind CSS v4의 주요 특징
 
-- **v3**: 현재 안정적이고 널리 사용되는 버전
-- **v4**: 아직 실험적 버전 (alpha/beta 단계)으로 프로덕션 환경에 권장되지 않음
+- **설정 파일 불필요**: `tailwind.config.js` 파일이 필요 없음
+- **CSS 기반 설정**: 모든 설정을 CSS 파일에서 직접 관리
+- **향상된 성능**: 더 빠른 빌드 시간과 런타임 성능
+- **새로운 구문**: `@import "tailwindcss"`와 `@theme` 블록 사용
 
-### Tailwind CSS v3의 장점
+### CSS 설정 예시
 
-- ✅ 안정적이고 검증된 기능들
-- ✅ 풍부한 문서와 커뮤니티 지원
-- ✅ 대부분의 프로덕션 환경에서 사용
-- ✅ Next.js와의 완벽한 호환성
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-primary: 222.2 47.4% 11.2%;
+  --color-background: 0 0% 100%;
+  /* 추가 테마 설정 */
+}
+
+@theme dark {
+  --color-primary: 210 40% 98%;
+  --color-background: 222.2 84% 4.9%;
+  /* 다크 모드 설정 */
+}
+```
+
+### v4 업그레이드의 장점
+
+- ✅ **더 빠른 성능**: 향상된 빌드 및 런타임 성능
+- ✅ **간소화된 설정**: 설정 파일 없이 CSS에서 직접 관리
+- ✅ **최신 기능**: 새로운 CSS 기반 테마 시스템
+- ✅ **향상된 개발 경험**: 더 나은 에러 메시지와 디버깅
 
 ## 🚀 배포
 
