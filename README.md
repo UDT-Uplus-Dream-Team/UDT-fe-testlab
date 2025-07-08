@@ -6,7 +6,7 @@ Next.js 15, TypeScript, Tailwind CSS v4로 구축된 최신 테스트 환경입�
 
 - **Framework**: Next.js 15.3.5 (App Router)
 - **Language**: TypeScript 5
-- **Styling**: Tailwind CSS 4.0.0 (최신 버전)
+- **Styling**: Tailwind CSS 4.1.11 (최신 버전)
 - **Linting**: ESLint 9
 - **Code Formatting**: Prettier
 - **Git Hooks**: Husky
